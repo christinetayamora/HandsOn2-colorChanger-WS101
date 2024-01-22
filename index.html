@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Color Changer</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: violet;
+            text-align: left;
+            margin: 30px;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+
+        h1 {
+            color: whitesmoke;
+        }
+
+        #colorButton {
+            margin-top: 40px;
+            padding: 15px 30px;
+            font-size: 25px;
+            background-color: #3498db;
+            color: black;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #colorButton:hover {
+            background-color: green;
+        }
+
+        #colorDiv {
+            margin-top: 40px;
+            padding: 100px;
+            font-size: 34px;
+            border-radius: 20px;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        #colorDiv.blue {
+            background-color: blue;
+        }
+
+        #colorDiv.green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+        <div class="content">
+            <h1>JavaScript colorChanger() Hands-On</h1>
+            <button id="colorButton">Click Here!</button>
+            <div id="colorDiv"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const colorButton = document.getElementById('colorButton');
+            const colorDiv = document.getElementById('colorDiv');
+
+            colorButton.addEventListener('click', function () {
+                if (colorDiv.classList.contains('blue')) {
+                    colorDiv.classList.remove('blue');
+                    colorDiv.classList.add('green');
+                } else {
+                    colorDiv.classList.remove('green');
+                    colorDiv.classList.add('blue');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
